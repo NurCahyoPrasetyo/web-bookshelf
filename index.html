@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Bookshelf || Frontend</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h2>BookshelfApps</h2>
+      </div>
+
+      <div>
+        <input
+          id="searchBooks"
+          type="text"
+          class="input"
+          placeholder="Cari Buku"
+        />
+        <button class="button btn-hidden">Tambah Buku</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="toggle-hidden" class="overlay" hidden="true">
+        <div class="form-container">
+          <h2 class="title-form">Masukan Buku Baru</h2>
+          <form id="inputBook">
+            <div>
+              <label for="inputBookTitle" class="form-label">Judul</label>
+              <input
+                id="inputBookTitle"
+                class="form-input"
+                type="text"
+                required
+              />
+            </div>
+            <div>
+              <label for="inputBookAuthor" class="form-label">Penulis</label>
+              <input
+                id="inputBookAuthor"
+                class="form-input"
+                type="text"
+                required
+              />
+            </div>
+            <div>
+              <label for="inputBookYear" class="form-label">Tahun</label>
+              <input id="inputBookYear" class="form-input" type="number" />
+            </div>
+            <div>
+              <select class="form-select" id="select">
+                <option>Pilih Status</option>
+                <option value="completed">Selesai dibaca</option>
+                <option value="uncompleted">Belum dibaca</option>
+              </select>
+            </div>
+            <div class="btn-group">
+              <button
+                id="bookSubmit"
+                class="form-btn primary-btn"
+                type="submit"
+              >
+                Submit
+              </button>
+              <button id="btn-cancel" class="form-btn danger-btn" type="button">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="book-result">
+        <div>
+          <h2 class="header-h2">Belum Selesai dibaca</h2>
+          <div id="uncompletedBooksList" class="book-list"></div>
+        </div>
+        <div>
+          <h2 class="header-h2">Selesai dibaca</h2>
+          <div id="completedBookList" class="book-list"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
